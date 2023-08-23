@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EmailValidator } from '@angular/forms';
 import { User } from '../models/user';
 
 @Component({
@@ -10,12 +9,22 @@ import { User } from '../models/user';
 export class RegistrationComponent implements OnInit {
 
   public user:User;
+  public isRegistration:boolean;
 
   constructor() { 
     this.user = new User(0, "", "", "", "");
+    this.isRegistration = true;
   }
 
   ngOnInit(): void {
+  }
+
+  doRegistration() {
+    this.isRegistration = false;
+  }
+
+  doHome() {
+    this.isRegistration = true;
   }
 
 }
