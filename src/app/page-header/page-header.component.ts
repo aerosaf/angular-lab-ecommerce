@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageHeaderComponent implements OnInit {
 
-  public appTitle:string = "Ørsted"
+  public appTitle:string = "Aerosaf"
 
   constructor() { }
 

@@ -11,7 +11,7 @@ export class PageFooterComponent implements OnInit{
   public date:Date;
 
   constructor() {
-    this.copyright = "Copyright &copy; Orsted Malaysia 2023";
+    this.copyright = "Copyright &copy; Aerosaf Malaysia 2023";
     this.date = new Date();
   }
 
