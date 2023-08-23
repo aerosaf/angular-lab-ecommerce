@@ -10,15 +10,15 @@ import { CartItem } from '../models/cart-item';
 export class ProductsComponent implements OnInit {
 
   // public products:string[];
-  public products:Product[];
-  public reorderQuantity:number;
+  public products: Product[];
+  public reorderQuantity: number;
   // public lessQuantity:string;
-  public colspan:number;
-  public isGallery:boolean;
-  public searchResults:Product[];
-  public shoppingCart:CartItem[];
+  public colspan: number;
+  public isGallery: boolean;
+  public searchResults: Product[];
+  public shoppingCart: CartItem[];
 
-  constructor() { 
+  constructor() {
     this.reorderQuantity = 20;
     this.colspan = 2;
     this.isGallery = true;
@@ -91,12 +91,12 @@ export class ProductsComponent implements OnInit {
     // they are actually using the library zonejs to handle this change management
   }
 
-  doSearch(event:Event) {
-    let searchTextBox:HTMLInputElement = event.target as HTMLInputElement;
-    let keyword:string = searchTextBox.value;
+  doSearch(event: Event) {
+    let searchTextBox: HTMLInputElement = event.target as HTMLInputElement;
+    let keyword: string = searchTextBox.value;
     if (keyword !== "") {
-      let regExp:RegExp = new RegExp("^" + keyword, "i");
-      this.searchResults = this.products.filter((product:Product) => {
+      let regExp: RegExp = new RegExp("^" + keyword, "i");
+      this.searchResults = this.products.filter((product: Product) => {
         return regExp.test(product.name);
       })
     } else {
@@ -104,14 +104,13 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  addToCart(product:Product, requiredQuantity:HTMLInputElement) {
-    let quantity:number = +requiredQuantity.value;
-    let cartItem:CartItem = { id: 0, product: product, requiredQuantity: quantity };
+  addToCart(cartItem: any) {
+    console.log(cartItem);
     this.shoppingCart.push(cartItem);
-    requiredQuantity.value = "";
   }
 
-  validate(product:Product, requiredQuantity:HTMLInputElement, addButton:HTMLButtonElement) {
+  validate(product: Product, requiredQuantity: HTMLInputElement, addButton: HTMLButtonElement) {
     addButton.disabled = product.quantity <= +requiredQuantity.value;
   }
+
 }

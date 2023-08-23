@@ -1,0 +1,29 @@
+<ng-container *ngIf="product && index !== undefined">
+    <td>{{ index + 1 }}</td>
+    <td>
+        <img [src]="product.photo" class="img-thumbnail" [alt]="product.photo" width="150" />
+    </td>
+    <td>
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+    </td>
+    <td>
+        <!--
+        <h6 class="lessQuantity">Quantity: {{ product.quantity }}</h6>
+        <h6 [class]="lessQuantity">Quantity: {{ product.quantity }}</h6>
+        <h6 [class]="'lessQuantity'">Quantity: {{ product.quantity }}</h6>
+        -->
+        <h6 [class.lessQuantity]="product.quantity < reorderQuantity">
+            Quantity: {{ product.quantity }}</h6>
+    </td>
+    <td>
+        <h6 [style.color]="(product.price < 1000) ? 'green' : (product.price < 2000) ? 'blue' : 'red'">
+            Price: {{ product.price }}</h6>
+    </td>
+    <td>
+        <input type="text" name="requiredQuantity" id="requiredQuantity" #requiredQuantity maxlength="3" size="3"
+            (keyup)="validate(product, requiredQuantity, addButton)" />&nbsp;
+        <button class="btn btn-primary" #addButton [disabled]="product.quantity < reorderQuantity"
+            (click)="emitCartItem(product, requiredQuantity)">Add</button>
+    </td>
+</ng-container>

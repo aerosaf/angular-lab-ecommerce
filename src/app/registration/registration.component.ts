@@ -8,10 +8,10 @@ import { User } from '../models/user';
 })
 export class RegistrationComponent implements OnInit {
 
-  public user:User;
-  public isRegistration:boolean;
+  public user: User;
+  public isRegistration: boolean;
 
-  constructor() { 
+  constructor() {
     this.user = new User(0, "", "", "", "");
     this.isRegistration = true;
   }
