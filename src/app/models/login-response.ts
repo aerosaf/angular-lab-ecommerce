@@ -1,11 +1,13 @@
 import { User } from "./user";
 
 export class LoginResponse {
-    public user:User;
-    public accessToken: string;
 
-    constructor(user:User, accessToken:string) {
-        this.user = user;
+    public accessToken:string;
+    public user:User;
+
+    constructor(accessToken:string, user:User) {
         this.accessToken = accessToken;
+        this.user = user;
     }
+
 }

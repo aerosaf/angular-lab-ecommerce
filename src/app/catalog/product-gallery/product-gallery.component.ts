@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Product } from '../models/product';
-import { CartItem } from '../models/cart-item';
+import { Product } from '../../models/product';
+import { CartItem } from '../../models/cart-item';
 
 @Component({
   selector: 'app-product-gallery',

@@ -6,10 +6,12 @@ describe('ProductManagerComponent', () => {
   let component: ProductManagerComponent;
   let fixture: ComponentFixture<ProductManagerComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ProductManagerComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ProductManagerComponent ]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(ProductManagerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

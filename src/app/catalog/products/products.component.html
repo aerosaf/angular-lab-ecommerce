@@ -14,20 +14,34 @@
             Event interface has a property called target. Target will give you
             the form element object where the event occurs.
         -->
-        <input type="text" name="keyword" id="keyword" class="form-control" (keyup)="doSearch($event)" />
+        <input type="text" name="keyword" id="keyword" class="form-control"
+            (keyup)="doSearch($event)"/>
+        <!--
         <ol>
             <li *ngFor="let product of searchResults">{{ product.name }}</li>
         </ol>
+        -->
+        <table class="table table-bordered">
+            <tbody>
+                <tr *ngFor="let currentProduct of searchResults; let i = index"
+                    class="app-product-list" [product]="currentProduct" [index]="i"
+                        (notify)="addToCart($event)">
+                </tr>                
+            </tbody>
+        </table>
     </div>
     <div class="col-1">
-        <button type="button" class="btn btn-primary position-relative">
-            Cart
+        <button type="button" class="btn btn-primary position-relative" 
+            routerLink="/shoppingcart">Cart
             <span class="position-absolute top-0 start-100 translate-middle 
                 badge rounded-pill bg-danger">{{ shoppingCart.length }}</span>
         </button>
     </div>
     <div class="col-1" style="padding-bottom: 15px;">
-        <button class="btn btn-success" style="float: right" (click)="changeView()">Gallery</button>
+        <button class="btn btn-success" style="float: right"
+            (click)="changeView()">
+            <span [innerHTML]="(isGallery) ? 'List' : 'Gallery'"></span>
+        </button>
     </div>
 </div>
 <div class="row" *ngIf="isGallery">
@@ -36,7 +50,7 @@
             parent component sending data to child component using []
             [property_declared_inside_the_child_component_with_@Input] = "value"
         -->
-        <app-product-gallery [product]="currentProduct" (notify)="addToCart($event)">
+        <app-product-gallery [product]="currentProduct" (notify)="addToCart($event)">           
         </app-product-gallery>
     </div>
 </div>
@@ -62,8 +76,9 @@
                     app-product-list [product]="currentProduct" [index]="i"
                         (notify)="addToCart($event)">
                 -->
-                <tr *ngFor="let currentProduct of products; let i = index" class="app-product-list"
-                    [product]="currentProduct" [index]="i" (notify)="addToCart($event)">
+                <tr *ngFor="let currentProduct of products; let i = index"
+                    class="app-product-list" [product]="currentProduct" [index]="i"
+                        (notify)="addToCart($event)">
                 </tr>
             </tbody>
         </table>

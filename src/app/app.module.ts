@@ -3,43 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from './router.config';
+import { HttpClientModule } from '@angular/common/http';
+
+import { SharedModule } from './shared/shared.module';
+import { CatalogModule } from './catalog/catalog.module';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { PageHeaderComponent } from './page-header/page-header.component';
-import { PageFooterComponent } from './page-footer/page-footer.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductGalleryComponent } from './product-gallery/product-gallery.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { LoginComponent } from './login/login.component';
-import { GreetingPipe } from './pipes/greeting.pipe';
-import { ShoppingCartItemComponent } from './shopping-cart-item/shopping-cart-item.component';
-import { HttpClientModule } from '@angular/common/http';
-import { GreetingComponent } from './greeting/greeting.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuComponent,
-    PageHeaderComponent,
-    PageFooterComponent,
-    ProductsComponent,
-    ProductGalleryComponent,
-    ProductListComponent,
-    RegistrationComponent,
-    ShoppingCartComponent,
-    LoginComponent,
-    GreetingPipe,
-    ShoppingCartItemComponent,
-    GreetingComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    CatalogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

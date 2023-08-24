@@ -26,8 +26,8 @@ export class ShoppingCartService {
     return this.httpClient.post<CartItem>(this.APIENDPOINT, cartItem);
   }
 
-  update(user:CartItem):Observable<CartItem> {
-    return this.httpClient.put<CartItem>(this.APIENDPOINT + "/" + user.id, user);
+  update(cartItem:CartItem):Observable<CartItem> {
+    return this.httpClient.put<CartItem>(this.APIENDPOINT + "/" + cartItem.id, cartItem);
   }
 
   delete(id:number):Observable<CartItem> {

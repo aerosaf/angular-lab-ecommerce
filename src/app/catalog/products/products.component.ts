@@ -45,6 +45,9 @@ export class ProductsComponent implements OnInit {
     this.productService.findAll().subscribe((products:Product[]) => {
       this.products = products;
     })
+    this.shoppingCartService.findAll().subscribe((cartItem:CartItem[]) => {
+      this.shoppingCart = cartItem;
+    })
   }
 
   changeView() {
