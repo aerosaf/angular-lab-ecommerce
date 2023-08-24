@@ -1,8 +1,30 @@
 <div class="card" *ngIf="product">
-    <img [src]="product.photo" class="card-img-top" [alt]="product.photo" />
+    <img [src]="product.photo" class="card-img-top" [alt]="product.photo"/>
     <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5>
-        <p class="card-text">{{ product.description }}</p>
+        <h5 class="card-title">{{ product.name | uppercase }}</h5>
+        <!-- Multiple style binding -->
+        <!--
+        <p class="card-text"
+            [style.color]="getDescriptionColor(product.source)"
+            [style.font-size.px]="'18'">
+            {{ product.description }}</p>
+        -->
+        <p class="card-text" [ngStyle]="{
+                'color': getDescriptionColor(product.source),
+                'font-size.px': '18'
+            }">{{ product.description }}</p>
+        <!-- Multiple class binding -->
+        <!--
+        <h6 [class.text-primary]="product.source === 'USA'"
+            [class.text-danger]="product.source === 'China'"
+            [class.text-success]="product.source === 'Malaysia'">
+            Source: {{ product.source }}</h6>
+        -->
+        <h6 [ngClass]="{
+                'text-primary':product.source === 'USA',
+                'text-danger':product.source === 'China',
+                'text-success':product.source === 'Malaysia'
+            }">Source: {{ product.source }}</h6>
         <!--
         <h6 class="lessQuantity">Quantity: {{ product.quantity }}</h6>
         <h6 [class]="lessQuantity">Quantity: {{ product.quantity }}</h6>
@@ -11,16 +33,18 @@
         <h6 [class.lessQuantity]="product.quantity < reorderQuantity">
             Quantity: {{ product.quantity }}</h6>
         <h6 [style.color]="(product.price < 1000) ? 'green' : (product.price < 2000) ? 'blue' : 'red'">
-            Price: {{ product.price }}</h6>
+            Price: {{ product.price | currency:'RM' }}</h6>
         <!-- 
             We have created a variable #requiredQuantity in the DOM
             This variable is pointing to the entire TextBox
             VDOM don't know anything about this particular variable
             unless you pass this variable to method in VDOM
         -->
-        <input type="text" name="requiredQuantity" id="requiredQuantity" #requiredQuantity maxlength="3" size="3"
-            (keyup)="validate(product, requiredQuantity, addButton)" />&nbsp;
-        <button class="btn btn-primary" #addButton [disabled]="product.quantity < reorderQuantity"
+        <input type="text" name="requiredQuantity" id="requiredQuantity" 
+            #requiredQuantity maxlength="3" size="3"
+            (keyup)="validate(product, requiredQuantity, addButton)"/>&nbsp;
+        <button class="btn btn-primary" #addButton
+            [disabled]="product.quantity < reorderQuantity"
             (click)="emitCartItem(product, requiredQuantity)">Add</button>
     </div>
 </div>

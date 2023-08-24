@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageHeaderComponent implements OnInit {
 
-  public appTitle:string = "Aerosaf"
+  public appTitle:string;
+  public greetingTime:Date;
 
-  constructor() { }
+  constructor() { 
+    this.appTitle = "Online Bazzar";
+    this.greetingTime = new Date();
+  }
 
   ngOnInit(): void {
-      
   }
+
 }

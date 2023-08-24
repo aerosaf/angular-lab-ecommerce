@@ -21,7 +21,7 @@
             Price: {{ product.price }}</h6>
     </td>
     <td>
-        <input type="text" name="requiredQuantity" id="requiredQuantity" #requiredQuantity maxlength="3" size="3"
+        <input type="text" name="requiredQuantity" #requiredQuantity maxlength="3" size="3"
             (keyup)="validate(product, requiredQuantity, addButton)" />&nbsp;
         <button class="btn btn-primary" #addButton [disabled]="product.quantity < reorderQuantity"
             (click)="emitCartItem(product, requiredQuantity)">Add</button>

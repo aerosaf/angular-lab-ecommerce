@@ -33,7 +33,8 @@ export class ProductsComponent implements OnInit {
         description: "To watch movies",
         quantity: 15,
         price: 1455.55,
-        photo: "https://static.toiimg.com/thumb/msid-81429075,width-400,resizemode-4/81429075.jpg"
+        photo: "https://static.toiimg.com/thumb/msid-81429075,width-400,resizemode-4/81429075.jpg",
+        source: "Poland"
       },
       {
         id: 2,
@@ -41,7 +42,8 @@ export class ProductsComponent implements OnInit {
         description: "To listen music",
         quantity: 35,
         price: 428.75,
-        photo: "https://cdn.dribbble.com/users/237893/screenshots/819450/birafmv2.png"
+        photo: "https://cdn.dribbble.com/users/237893/screenshots/819450/birafmv2.png",
+        source: "Malaysia"
       },
       {
         id: 3,
@@ -49,7 +51,8 @@ export class ProductsComponent implements OnInit {
         description: "To do work",
         quantity: 25,
         price: 4199.25,
-        photo: "https://static.toiimg.com/thumb/msid-87976133,width-400,resizemode-4/87976133.jpg"
+        photo: "https://static.toiimg.com/thumb/msid-87976133,width-400,resizemode-4/87976133.jpg",
+        source: "China"
       },
       {
         id: 4,
@@ -57,7 +60,8 @@ export class ProductsComponent implements OnInit {
         description: "To do presentation",
         quantity: 75,
         price: 2797.15,
-        photo: "https://static.toiimg.com/thumb/msid-81306847,width-400,resizemode-4/81306847.jpg"
+        photo: "https://static.toiimg.com/thumb/msid-81306847,width-400,resizemode-4/81306847.jpg",
+        source: "Denmark"
       },
       {
         id: 5,
@@ -65,7 +69,8 @@ export class ProductsComponent implements OnInit {
         description: "To travel",
         quantity: 55,
         price: 475.25,
-        photo: "https://www.motoshark.com/wp-content/uploads/2019/07/dirt-bike-size-kids.jpg"
+        photo: "https://www.motoshark.com/wp-content/uploads/2019/07/dirt-bike-size-kids.jpg",
+        source: "USA"
       },
       {
         id: 6,
@@ -73,7 +78,8 @@ export class ProductsComponent implements OnInit {
         description: "To communicate",
         quantity: 35,
         price: 1234.55,
-        photo: "https://i.insider.com/4edfcebe6bb3f7453a000009?width=600&format=jpeg&auto=webp"
+        photo: "https://i.insider.com/4edfcebe6bb3f7453a000009?width=600&format=jpeg&auto=webp",
+        source: "Malaysia"
       }
     ]
   }
