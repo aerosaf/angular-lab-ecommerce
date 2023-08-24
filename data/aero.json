@@ -1,0 +1,75 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Television",
+      "description": "To watch movies",
+      "quantity": 15,
+      "price": 1455.55,
+      "photo": "https://static.toiimg.com/thumb/msid-81429075,width-400,resizemode-4/81429075.jpg",
+      "source": "Poland"
+    },
+    {
+      "id": 2,
+      "name": "Radio",
+      "description": "To listen music",
+      "quantity": 35,
+      "price": 428.75,
+      "photo": "https://cdn.dribbble.com/users/237893/screenshots/819450/birafmv2.png",
+      "source": "Malaysia"
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "description": "To do work",
+      "quantity": 25,
+      "price": 4199.25,
+      "photo": "https://static.toiimg.com/thumb/msid-87976133,width-400,resizemode-4/87976133.jpg",
+      "source": "China"
+    },
+    {
+      "id": 4,
+      "name": "Tablet",
+      "description": "To do presentation",
+      "quantity": 75,
+      "price": 2797.15,
+      "photo": "https://static.toiimg.com/thumb/msid-81306847,width-400,resizemode-4/81306847.jpg",
+      "source": "Denmark"
+    },
+    {
+      "id": 5,
+      "name": "Bicycle",
+      "description": "To travel",
+      "quantity": 55,
+      "price": 475.25,
+      "photo": "https://www.motoshark.com/wp-content/uploads/2019/07/dirt-bike-size-kids.jpg",
+      "source": "USA"
+    },
+    {
+      "id": 6,
+      "name": "Handphone",
+      "description": "To communicate",
+      "quantity": 35,
+      "price": 1234.55,
+      "photo": "https://i.insider.com/4edfcebe6bb3f7453a000009?width=600&format=jpeg&auto=webp",
+      "source": "Malaysia"
+    }
+  ],
+  "shoppingcart": [],
+  "users": [
+    {
+      "id": 1,
+      "firstname": "asdf",
+      "lastname": "asdf",
+      "email": "asdf",
+      "password": "asdf"
+    },
+    {
+      "id": 2,
+      "firstname": "asd",
+      "lastname": "asd",
+      "email": "asd",
+      "password": "asd"
+    }
+  ]
+}

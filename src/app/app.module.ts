@@ -15,6 +15,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LoginComponent } from './login/login.component';
 import { GreetingPipe } from './pipes/greeting.pipe';
+import { ShoppingCartItemComponent } from './shopping-cart-item/shopping-cart-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GreetingComponent } from './greeting/greeting.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +31,15 @@ import { GreetingPipe } from './pipes/greeting.pipe';
     RegistrationComponent,
     ShoppingCartComponent,
     LoginComponent,
-    GreetingPipe
+    GreetingPipe,
+    ShoppingCartItemComponent,
+    GreetingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

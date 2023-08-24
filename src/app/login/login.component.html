@@ -1,4 +1,5 @@
-<div class="row">
+<div class="alert alert-danger" *ngIf="message">{{ message }}</div>
+<div class="row" *ngIf="!loginResponse">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
@@ -18,7 +19,41 @@
                         placeholder="Password"/>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-success">Login</button>
+                    <button class="btn btn-success" (click)="doLogin()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="loginResponse">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Login</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">First Name</label>&nbsp;&nbsp;
+                    <label for="firstname" class="form-label">
+                        <b>{{ loginResponse.user.firstname }}</b></label>
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Last Name</label>&nbsp;&nbsp;
+                    <label for="lastname" class="form-label">
+                        <b>{{ loginResponse.user.lastname }}</b></label>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-Mail</label>&nbsp;&nbsp;
+                    <label for="email" class="form-label">
+                        <b>{{ loginResponse.user.email }}</b></label>
+                </div>
+                <div class="mb-3">
+                    <label for="accessToken" class="form-label">Access Token</label>&nbsp;&nbsp;
+                    <label for="accessToken" class="form-label">
+                        <b>{{ loginResponse.accessToken }}</b></label>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success" (click)="doLogin()">Logout</button>
                 </div>
             </div>
         </div>

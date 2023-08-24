@@ -20,7 +20,10 @@
                     <a class="nav-link" routerLink="registration">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="login">Login</a>
+                    <a class="nav-link" routerLink="login" *ngIf="!loginResponse">Login</a>
+                    <a class="nav-link" routerLink="login" *ngIf="loginResponse">
+                        {{ loginResponse.user.firstname }} {{ loginResponse.user.lastname }}
+                    </a>
                 </li>
             </ul>
         </div>
